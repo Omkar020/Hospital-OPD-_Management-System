@@ -12,4 +12,5 @@ public interface PatientService {
 		Patient update(long pid,Patient p);
 		Patient serach(long pid);
 		List<Patient>getAll();
+		Patient login(String em,String ps);
 }

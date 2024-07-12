@@ -23,12 +23,6 @@ public Prescription insert(Prescription ps) {
 }
 
 @Override
-public void delete(long pid) {
-	// TODO Auto-generated method stub
-	
-}
-
-@Override
 public Prescription update(long pid, Prescription ps) {
 	// TODO Auto-generated method stub
 	Optional<Prescription> opt=priRepo.findById(pid);

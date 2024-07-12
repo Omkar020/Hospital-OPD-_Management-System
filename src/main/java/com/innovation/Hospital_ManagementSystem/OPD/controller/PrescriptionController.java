@@ -14,42 +14,35 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.innovation.Hospital_ManagementSystem.OPD.model.Patient;
-import com.innovation.Hospital_ManagementSystem.OPD.services.PatientService;
+import com.innovation.Hospital_ManagementSystem.OPD.model.Prescription;
+import com.innovation.Hospital_ManagementSystem.OPD.services.PrescriptionService;
 
 @RestController
-@RequestMapping("/opd/")
+@RequestMapping("/opd")
 @CrossOrigin(origins = "http://localhost:4200")
-public class PatientController {
+public class PrescriptionController {
 @Autowired
-PatientService ps;
-@GetMapping("/patient")
-public List<Patient> getAll()
+PrescriptionService ps;
+
+@GetMapping("/prescription")
+public List<Prescription>getAll()
 {
 	return ps.getAll();
 }
-@PostMapping("/patient")
-public Patient insert(@RequestBody Patient p)
+@PostMapping("/prescription")
+public Prescription insert(@RequestBody Prescription p)
 {
 	return ps.insert(p);
 }
-@DeleteMapping("/patient{id}")
-public void delete(@PathVariable("id")long id)
-{
-	ps.delete(id);
-}
-@PutMapping("/patient/{id}")
-public Patient update(@PathVariable ("id") long id,@RequestBody Patient p)
+
+@PutMapping("/prescription/{id}")
+public Prescription update(@PathVariable ("id") long id,@RequestBody Prescription p)
 {
 	return ps.update(id,p);
 }
-@GetMapping("/patient/{id}")
-public Patient search(@PathVariable("id")long id)
+@GetMapping("/prescription/{id}")
+public Prescription search(@PathVariable("id")long id)
 {
 	return ps.serach(id);
-}
-@GetMapping("/patient/{email}/{password}")
-public Patient login(@PathVariable("email")String email,@PathVariable("password")String password)
-{
-	return ps.login(email,password);
 }
 }
