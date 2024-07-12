@@ -12,8 +12,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.innovation.Hospital_ManagementSystem.OPD.model.Patient;
 import com.innovation.Hospital_ManagementSystem.OPD.model.Prescription;
 import com.innovation.Hospital_ManagementSystem.OPD.services.PrescriptionService;
 
