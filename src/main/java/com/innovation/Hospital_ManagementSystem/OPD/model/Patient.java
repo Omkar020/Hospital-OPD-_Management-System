@@ -10,12 +10,13 @@ public class Patient {
 @Id
 @GeneratedValue(strategy = GenerationType.AUTO)
 private long pid;
-private String name,address,gender,age,contact,email,password;
+private String name,address,gender,contact,email,password;
+private int age;
 public Patient() {
 	super();
 	// TODO Auto-generated constructor stub
 }
-public Patient(String name, String address, String gender, String age, String contact, String email, String password) {
+public Patient(String name, String address, String gender, int age, String contact, String email, String password) {
 	super();
 	this.name = name;
 	this.address = address;
@@ -49,10 +50,10 @@ public String getGender() {
 public void setGender(String gender) {
 	this.gender = gender;
 }
-public String getAge() {
+public int getAge() {
 	return age;
 }
-public void setAge(String age) {
+public void setAge(int age) {
 	this.age = age;
 }
 public String getContact() {
